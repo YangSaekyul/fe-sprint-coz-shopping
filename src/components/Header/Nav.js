@@ -12,7 +12,6 @@ function Nav() {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    console.log(isOpen);
   };
 
   return (
@@ -29,7 +28,7 @@ function Nav() {
     c-0.4,0-0.7,0.3-0.7,0.7C5,16.6,5.4,17,5.8,17h12.5C18.7,17,19,16.7,19,16.2z"
         ></path>
       </StyledNav>
-      {isOpen && <DropdownMenu />}
+      {isOpen && <DropdownMenu open={isOpen} />}
     </>
   );
 }

@@ -7,11 +7,16 @@ import Brand from "./Brand";
 import Styled from "styled-components";
 import Loading from "./Loading";
 
-const GridContainer = Styled.div`
-  display: grid;
+const GridContainer = Styled.main`
+  /* display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 20px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
 `;
 
 const ProductComponent = () => {

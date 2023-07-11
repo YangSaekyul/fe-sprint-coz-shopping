@@ -9,6 +9,9 @@ import {
 } from "./ProductsStyles";
 
 const ProductContainer = Styled.div`
+`;
+
+const InfoContainer = Styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 287px;
@@ -25,12 +28,12 @@ function numberWithCommas(x) {
 }
 
 const Products = ({ item }) => (
-  <div>
+  <ProductContainer>
     <ImageContainer>
       <StyledImage src={item.image_url} alt={item.title} />
       <BookmarkButton />
     </ImageContainer>
-    <ProductContainer>
+    <InfoContainer>
       <FontSize16Weight800>{item.title}</FontSize16Weight800>
       <NumberContainer>
         <ProductDiscountPercentage>
@@ -38,8 +41,8 @@ const Products = ({ item }) => (
         </ProductDiscountPercentage>
         <FontSize16>{numberWithCommas(item.price)}원</FontSize16>
       </NumberContainer>
-    </ProductContainer>
-  </div>
+    </InfoContainer>
+  </ProductContainer>
 );
 
 export default Products;

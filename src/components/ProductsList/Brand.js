@@ -5,13 +5,8 @@ import {
   FontSize16Weight800,
   ImageContainer,
   StyledImage,
+  NumberContainer,
 } from "./ProductsStyles";
-
-const Flex = Styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-`;
 
 const ProductContainer = Styled.div`
   display: flex;
@@ -31,10 +26,10 @@ const Brand = ({ item }) => (
     </ImageContainer>
     <ProductContainer>
       <FontSize16Weight800>{item.brand_name}</FontSize16Weight800>
-      <Flex>
+      <NumberContainer>
         <FontSize16Weight800>관심고객수</FontSize16Weight800>
         <FontSize16>{numberWithCommas(item.follower)}</FontSize16>
-      </Flex>
+      </NumberContainer>
     </ProductContainer>
   </div>
 );

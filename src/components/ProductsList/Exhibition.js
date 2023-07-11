@@ -1,8 +1,20 @@
-const Exhibition = ({ item }) => (
+import BookmarkButton from "../Buttons/BookmarkButton";
+import Styled from "styled-components";
+import { ImageContainer, ProductName, StyledImage } from "./ProductsStyles";
+
+const ProductSubTitle = Styled.div`
+  font-size: 16px;
+`;
+
+const Category = ({ item }) => (
   <div>
-    <h2>{item.title}</h2>
-    <p>{item.sub_title}</p>
+    <ImageContainer>
+      <StyledImage src={item.image_url} alt={item.title} />
+      <BookmarkButton />
+    </ImageContainer>
+    <ProductName># {item.title}</ProductName>
+    <ProductSubTitle>{item.sub_title}</ProductSubTitle>
   </div>
 );
 
-export default Exhibition;
+export default Category;

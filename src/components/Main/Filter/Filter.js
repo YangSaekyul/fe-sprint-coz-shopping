@@ -18,6 +18,7 @@ const FilterItem = styled.div`
 
 const StyledSpan = styled.span`
   cursor: pointer;
+  border-bottom: 2px solid transparent;
 
   &:hover,
   &:active,

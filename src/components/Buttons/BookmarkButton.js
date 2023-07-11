@@ -6,8 +6,8 @@ import styled from "styled-components";
 
 const StyledButton = styled.img`
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 15px;
   width: 30px;
 `;
 

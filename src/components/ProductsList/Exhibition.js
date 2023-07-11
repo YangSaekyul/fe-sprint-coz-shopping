@@ -1,20 +1,20 @@
 import BookmarkButton from "../Buttons/BookmarkButton";
-import Styled from "styled-components";
-import { ImageContainer, ProductName, StyledImage } from "./ProductsStyles";
+import {
+  ImageContainer,
+  FontSize16Weight800,
+  StyledImage,
+  FontSize16,
+} from "./ProductsStyles";
 
-const ProductSubTitle = Styled.div`
-  font-size: 16px;
-`;
-
-const Category = ({ item }) => (
+const Exhibition = ({ item }) => (
   <div>
     <ImageContainer>
       <StyledImage src={item.image_url} alt={item.title} />
       <BookmarkButton />
     </ImageContainer>
-    <ProductName># {item.title}</ProductName>
-    <ProductSubTitle>{item.sub_title}</ProductSubTitle>
+    <FontSize16Weight800># {item.title}</FontSize16Weight800>
+    <FontSize16>{item.sub_title}</FontSize16>
   </div>
 );
 
-export default Category;
+export default Exhibition;

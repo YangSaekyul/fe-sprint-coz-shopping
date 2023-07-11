@@ -1,6 +1,10 @@
 import BookmarkButton from "../Buttons/BookmarkButton";
 import Styled from "styled-components";
-import { ImageContainer, ProductName, StyledImage } from "./ProductsStyles";
+import {
+  ImageContainer,
+  FontSize16Weight800,
+  StyledImage,
+} from "./ProductsStyles";
 
 const ProductContainer = Styled.div`
   display: flex;
@@ -15,7 +19,7 @@ const Category = ({ item }) => (
       <BookmarkButton />
     </ImageContainer>
     <ProductContainer>
-      <ProductName># {item.title}</ProductName>
+      <FontSize16Weight800># {item.title}</FontSize16Weight800>
     </ProductContainer>
   </div>
 );

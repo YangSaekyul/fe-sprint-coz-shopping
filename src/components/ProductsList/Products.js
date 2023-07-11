@@ -1,6 +1,12 @@
 import BookmarkButton from "../Buttons/BookmarkButton";
 import Styled from "styled-components";
-import { ImageContainer, ProductName, StyledImage } from "./ProductsStyles";
+import {
+  ImageContainer,
+  FontSize16Weight800,
+  NumberContainer,
+  StyledImage,
+  FontSize16,
+} from "./ProductsStyles";
 
 const ProductContainer = Styled.div`
   display: flex;
@@ -8,20 +14,10 @@ const ProductContainer = Styled.div`
   max-width: 287px;
 `;
 
-const PriceContainer = Styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-`;
-
 const ProductDiscountPercentage = Styled.div`
   font-size: 16px;
   font-weight: 800;
   color: #452CDD;
-`;
-
-const ProductPrice = Styled.div`
-  font-size: 16px;
 `;
 
 function numberWithCommas(x) {
@@ -35,13 +31,13 @@ const Products = ({ item }) => (
       <BookmarkButton />
     </ImageContainer>
     <ProductContainer>
-      <ProductName>{item.title}</ProductName>
-      <PriceContainer>
+      <FontSize16Weight800>{item.title}</FontSize16Weight800>
+      <NumberContainer>
         <ProductDiscountPercentage>
-          {item.discountPercentage} %
+          {item.discountPercentage}%
         </ProductDiscountPercentage>
-        <ProductPrice>{numberWithCommas(item.price)} 원</ProductPrice>
-      </PriceContainer>
+        <FontSize16>{numberWithCommas(item.price)}원</FontSize16>
+      </NumberContainer>
     </ProductContainer>
   </div>
 );

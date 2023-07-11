@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 const StyledNav = styled.svg`
-  display: flex;
-  align-items: center;
   height: 37.6px;
+  margin-right: 20px;
 `;
 
 function Nav() {

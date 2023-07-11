@@ -1,20 +1,18 @@
 import styled from "styled-components";
 
 const StyledLogo = styled.svg`
-  width: 111;
-  height: 29;
+  margin-left: 10px;
+  height: 29px;
 `;
 
 function Logo() {
   return (
     <>
       <StyledLogo
-        width="111"
-        height="29"
-        viewBox="0 0 111 29"
+        viewBox="0 0 70 29"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="general-header__content--logo--small"
+        className="general-header__content--logo--small"
       >
         <path
           d="M31.9 0.5L29 3.4V9L31.9 11.9H47.8L50.7 9V3.5L47.8 0.6H31.9V0.5Z"

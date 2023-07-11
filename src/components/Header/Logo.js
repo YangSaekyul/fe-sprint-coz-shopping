@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-const StyledLogo = styled.svg``;
+const StyledLogo = styled.svg`
+  width: 111;
+  height: 29;
+`;
 
 function Logo() {
   return (

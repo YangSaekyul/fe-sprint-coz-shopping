@@ -19,6 +19,5 @@ src
 │   └── Bookmark
 │       ├── BookmarkPage.js
 │       ├── FilterButton.js
-│       └── Product.js
 └── App.js
 ```

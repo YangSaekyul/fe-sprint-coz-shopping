@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,8 +9,6 @@ const StyledFooter = styled.footer`
   color: grey;
 `;
 
-// div 포인터 커서 적용 / 글씨 크기 0.8rem / margin-top 20px / 글씨 색 grey
-// 호버 적용 (하이퍼링크같은 형태)
 const StyledDiv = styled.div`
   cursor: pointer;
   font-size: 0.8rem;

@@ -4,12 +4,21 @@ import Products from "./Products";
 import Exhibition from "./Exhibition";
 import Category from "./Category";
 import Brand from "./Brand";
+import Styled from "styled-components";
+import Loading from "./Loading";
+
+const GridContainer = Styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+`;
 
 const ProductComponent = () => {
   const { data, loading, error } = useData();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (error) {
@@ -21,7 +30,7 @@ const ProductComponent = () => {
   }
 
   return (
-    <div>
+    <GridContainer>
       {data.map((item) => {
         switch (item.type) {
           case "Product":
@@ -36,7 +45,7 @@ const ProductComponent = () => {
             return null;
         }
       })}
-    </div>
+    </GridContainer>
   );
 };
 

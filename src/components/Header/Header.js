@@ -5,14 +5,16 @@ import Nav from "./Nav";
 const StyledHeader = styled.header`
   position: sticky;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  padding: 1px 0;
+  margin-bottom: 20px;
 `;
 
-const HeaderBar = styled.header`
+const HeaderBar = styled.div`
   display: flex;
-  margin: 20px 0;
   justify-content: space-between;
   align-items: center;
   height: 50px;
+  margin: 10px;
 `;
 
 const Left = styled.div`

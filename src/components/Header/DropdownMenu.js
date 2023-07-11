@@ -21,8 +21,7 @@ const StyledDropdownMenu = styled.div`
   border-radius: 10px;
   margin-right: 10px;
   margin-top: 10px;
-  opacity: 0; // 처음엔 안보이게 설정
-  transform: translateY(10px); // 처음 위치 조정
+  transform: translateY(10px);
   animation: ${(props) =>
     props.open
       ? css`
@@ -30,7 +29,7 @@ const StyledDropdownMenu = styled.div`
         `
       : css`
           ${fadeOut} 0.5s forwards
-        `}; // 애니메이션 추가
+        `};
 `;
 
 const StyledUl = styled.ul`

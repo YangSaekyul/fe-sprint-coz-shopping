@@ -1,15 +1,24 @@
+import { useState } from "react";
 import styled from "styled-components";
 import DropdownMenu from "./DropdownMenu";
 
 const StyledNav = styled.svg`
   height: 37.6px;
-  margin-right: 20px;
+  margin-right: 40px;
 `;
 
 function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    console.log(isOpen);
+  };
+
   return (
     <>
       <StyledNav
+        onClick={toggleMenu}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         id="menu-bar"
@@ -20,7 +29,7 @@ function Nav() {
     c-0.4,0-0.7,0.3-0.7,0.7C5,16.6,5.4,17,5.8,17h12.5C18.7,17,19,16.7,19,16.2z"
         ></path>
       </StyledNav>
-      <DropdownMenu />
+      {isOpen && <DropdownMenu />}
     </>
   );
 }

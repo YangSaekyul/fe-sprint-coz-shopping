@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import Nav from "./Nav";
 
 const StyledHeader = styled.header`
-  position: relative;
+  position: sticky;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
 `;
 

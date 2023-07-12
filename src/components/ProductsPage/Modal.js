@@ -33,7 +33,7 @@ const ItemImage = Styled.img`
 
 const CloseButton = Styled.img`
   position: absolute;
-  top: -210px;
+  bottom: 410px;
   right: 15px;
   width: 30px;
   cursor: pointer;
@@ -53,7 +53,8 @@ const Title = Styled.h1`
 `;
 
 const Modal = ({ item, close }) => {
-  const closeModal = () => {
+  const closeModal = (e) => {
+    e.stopPropagation();
     close();
   };
 
@@ -65,14 +66,14 @@ const Modal = ({ item, close }) => {
           <BookmarkButton inline={true} />
           <Title>{item.title}</Title>
         </TitleContainer>
+        <ImageContainer>
+          <CloseButton
+            onClick={closeModal}
+            src={closeButton}
+            alt="닫기 버튼"
+          ></CloseButton>
+        </ImageContainer>
       </ModalContainer>
-      <ImageContainer>
-        <CloseButton
-          onClick={closeModal}
-          src={closeButton}
-          alt="닫기 버튼"
-        ></CloseButton>
-      </ImageContainer>
     </ModalBackground>
   );
 };

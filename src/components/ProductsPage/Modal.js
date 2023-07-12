@@ -58,13 +58,17 @@ const Modal = ({ item, close }) => {
     close();
   };
 
+  const imageUrl =
+    item.type === "Brand" ? item.brand_image_url : item.image_url;
+  const title = item.type === "Brand" ? item.brand_name : item.title;
+
   return (
     <ModalBackground onClick={closeModal}>
       <ModalContainer onClick={(e) => e.stopPropagation()}>
-        <ItemImage src={item.image_url} alt={item.title} />
+        <ItemImage src={imageUrl} alt={title} />
         <TitleContainer>
           <BookmarkButton inline={true} />
-          <Title>{item.title}</Title>
+          <Title>{title}</Title>
         </TitleContainer>
         <ImageContainer>
           <CloseButton

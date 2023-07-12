@@ -17,7 +17,7 @@ const GridContainer = Styled.main`
   padding: 20px;
 `;
 
-const ProductComponent = () => {
+const ProductComponent = ({ numItems = Infinity, showFilter = true }) => {
   const { data, loading, error } = useData();
   const [filterType, setFilterType] = useState("All");
 
@@ -33,12 +33,14 @@ const ProductComponent = () => {
     return <div>데이터가 존재하지 않습니다!</div>;
   }
 
+  const limitedData = data.slice(0, numItems);
+
   return (
     <>
-      <Filter setFilterType={setFilterType} />
+      {showFilter && <Filter setFilterType={setFilterType} />}
 
       <GridContainer>
-        {data.map((item) => {
+        {limitedData.map((item) => {
           if (filterType !== "All" && item.type !== filterType) {
             return null;
           }

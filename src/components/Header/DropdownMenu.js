@@ -2,7 +2,8 @@ import styled, { css, keyframes } from "styled-components";
 import gift from "./gift.png";
 import bookmark from "./bookmark.png";
 
-// 트랜지션 애니메이션을 위한 keyframes 정의
+import { CustomLink } from "./StyledLink";
+
 const fadeIn = keyframes`
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0px); }
@@ -22,6 +23,8 @@ const StyledDropdownMenu = styled.div`
   margin-right: 10px;
   margin-top: 10px;
   transform: translateY(10px);
+  background-color: #fff;
+  z-index: 9997;
   animation: ${(props) =>
     props.open
       ? css`
@@ -40,6 +43,8 @@ const StyledLi = styled.li`
   display: flex;
   padding: 15px;
   list-style: none;
+  text-decoration: none;
+  color: inherit;
 
   &:not(:last-child) {
     border-bottom: 1px solid #ddd;
@@ -59,12 +64,16 @@ function DropdownMenu({ open }) {
         <StyledUl>
           <StyledLi>양새결님, 안녕하세요!</StyledLi>
           <StyledLi>
-            <StyledImg src={gift} alt="상품리스트 페이지 아이콘"></StyledImg>
-            상품리스트 페이지
+            <CustomLink to="/product">
+              <StyledImg src={gift} alt="상품리스트 페이지 아이콘"></StyledImg>
+              상품리스트 페이지
+            </CustomLink>
           </StyledLi>
           <StyledLi>
-            <StyledImg src={bookmark} alt="북마크 페이지 아이콘"></StyledImg>
-            북마크 페이지
+            <CustomLink to="/bookmark">
+              <StyledImg src={bookmark} alt="북마크 페이지 아이콘"></StyledImg>
+              북마크 페이지
+            </CustomLink>
           </StyledLi>
         </StyledUl>
       </StyledDropdownMenu>

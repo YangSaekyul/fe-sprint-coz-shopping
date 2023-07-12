@@ -1,5 +1,7 @@
 import ProductsPage from "../ProductsPage/ProductsPage";
 
+//
+
 function MainPage() {
   return (
     <>

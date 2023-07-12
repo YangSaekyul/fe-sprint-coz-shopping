@@ -36,10 +36,10 @@ const ProductComponent = () => {
         switch (item.type) {
           case "Product":
             return <Products key={item.id} item={item} />;
-          case "Exhibition":
-            return <Exhibition key={item.id} item={item} />;
           case "Category":
             return <Category key={item.id} item={item} />;
+          case "Exhibition":
+            return <Exhibition key={item.id} item={item} />;
           case "Brand":
             return <Brand key={item.id} item={item} />;
           default:

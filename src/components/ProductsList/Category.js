@@ -6,6 +6,8 @@ import {
   StyledImage,
   ListContainer,
 } from "./ProductsStyles";
+import Modal from "../ProductsPage/Modal";
+import { useState } from "react";
 
 const ProductContainer = Styled.div`
   display: flex;
@@ -13,16 +15,21 @@ const ProductContainer = Styled.div`
   max-width: 287px;
 `;
 
-const Category = ({ item }) => (
-  <ListContainer>
-    <ImageContainer>
-      <StyledImage src={item.image_url} alt={item.title} />
-      <BookmarkButton />
-    </ImageContainer>
-    <ProductContainer>
-      <FontSize16Weight800># {item.title}</FontSize16Weight800>
-    </ProductContainer>
-  </ListContainer>
-);
+const Category = ({ item }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  return (
+    <ListContainer onClick={() => setShowModal(true)}>
+      <ImageContainer>
+        <StyledImage src={item.image_url} alt={item.title} />
+        <BookmarkButton />
+      </ImageContainer>
+      <ProductContainer>
+        <FontSize16Weight800># {item.title}</FontSize16Weight800>
+      </ProductContainer>
+      {showModal && <Modal item={item} close={() => setShowModal(false)} />}
+    </ListContainer>
+  );
+};
 
 export default Category;

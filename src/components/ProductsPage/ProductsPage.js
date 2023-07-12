@@ -1,4 +1,6 @@
 import { useData } from "./useData";
+import { useState } from "react";
+import Filter from "../Main/Filter/Filter";
 
 import Products from "../ProductsList/Products";
 import Exhibition from "../ProductsList/Exhibition";
@@ -17,6 +19,7 @@ const GridContainer = Styled.main`
 
 const ProductComponent = () => {
   const { data, loading, error } = useData();
+  const [filterType, setFilterType] = useState("All");
 
   if (loading) {
     return <Loading />;
@@ -31,22 +34,30 @@ const ProductComponent = () => {
   }
 
   return (
-    <GridContainer>
-      {data.map((item) => {
-        switch (item.type) {
-          case "Product":
-            return <Products key={item.id} item={item} />;
-          case "Category":
-            return <Category key={item.id} item={item} />;
-          case "Exhibition":
-            return <Exhibition key={item.id} item={item} />;
-          case "Brand":
-            return <Brand key={item.id} item={item} />;
-          default:
+    <>
+      <Filter setFilterType={setFilterType} />
+
+      <GridContainer>
+        {data.map((item) => {
+          if (filterType !== "All" && item.type !== filterType) {
             return null;
-        }
-      })}
-    </GridContainer>
+          }
+
+          switch (item.type) {
+            case "Product":
+              return <Products key={item.id} item={item} />;
+            case "Category":
+              return <Category key={item.id} item={item} />;
+            case "Exhibition":
+              return <Exhibition key={item.id} item={item} />;
+            case "Brand":
+              return <Brand key={item.id} item={item} />;
+            default:
+              return null;
+          }
+        })}
+      </GridContainer>
+    </>
   );
 };
 

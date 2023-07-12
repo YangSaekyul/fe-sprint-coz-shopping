@@ -4,6 +4,7 @@ import {
   ImageContainer,
   FontSize16Weight800,
   StyledImage,
+  ListContainer,
 } from "./ProductsStyles";
 
 const ProductContainer = Styled.div`
@@ -13,7 +14,7 @@ const ProductContainer = Styled.div`
 `;
 
 const Category = ({ item }) => (
-  <div>
+  <ListContainer>
     <ImageContainer>
       <StyledImage src={item.image_url} alt={item.title} />
       <BookmarkButton />
@@ -21,7 +22,7 @@ const Category = ({ item }) => (
     <ProductContainer>
       <FontSize16Weight800># {item.title}</FontSize16Weight800>
     </ProductContainer>
-  </div>
+  </ListContainer>
 );
 
 export default Category;

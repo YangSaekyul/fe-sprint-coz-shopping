@@ -4,17 +4,18 @@ import {
   FontSize16Weight800,
   StyledImage,
   FontSize16,
+  ListContainer,
 } from "./ProductsStyles";
 
 const Exhibition = ({ item }) => (
-  <div>
+  <ListContainer>
     <ImageContainer>
       <StyledImage src={item.image_url} alt={item.title} />
       <BookmarkButton />
     </ImageContainer>
     <FontSize16Weight800># {item.title}</FontSize16Weight800>
     <FontSize16>{item.sub_title}</FontSize16>
-  </div>
+  </ListContainer>
 );
 
 export default Exhibition;

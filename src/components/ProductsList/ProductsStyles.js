@@ -1,5 +1,10 @@
 import Styled from "styled-components";
 
+export const ListContainer = Styled.div`
+  cursor: pointer;
+  margin: 5px 0;
+`;
+
 export const ImageContainer = Styled.div`
   position: relative;
   display: inline-block;

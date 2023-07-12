@@ -1,11 +1,11 @@
 import Filter from "./Filter/Filter";
-import ProductComponent from "../ProductsList/ProductComponent";
+import ProductsPage from "../ProductsPage/ProductsPage";
 
 function MainPage() {
   return (
     <>
       <Filter />
-      <ProductComponent />
+      <ProductsPage />
     </>
   );
 }

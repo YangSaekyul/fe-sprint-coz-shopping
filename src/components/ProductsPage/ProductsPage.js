@@ -1,21 +1,17 @@
-import React from "react";
 import { useData } from "./useData";
-import Products from "./Products";
-import Exhibition from "./Exhibition";
-import Category from "./Category";
-import Brand from "./Brand";
+
+import Products from "../ProductsList/Products";
+import Exhibition from "../ProductsList/Exhibition";
+import Category from "../ProductsList/Category";
+import Brand from "../ProductsList/Brand";
 import Styled from "styled-components";
+
 import Loading from "./Loading";
 
 const GridContainer = Styled.main`
-  /* display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-top: 20px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 20px;
   padding: 20px;
 `;
 

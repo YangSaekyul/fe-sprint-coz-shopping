@@ -6,6 +6,7 @@ import {
   ImageContainer,
   StyledImage,
   NumberContainer,
+  ListContainer,
 } from "./ProductsStyles";
 
 const ProductContainer = Styled.div`
@@ -19,7 +20,7 @@ function numberWithCommas(x) {
 }
 
 const Brand = ({ item }) => (
-  <div>
+  <ListContainer>
     <ImageContainer>
       <StyledImage src={item.brand_image_url} alt={item.title} />
       <BookmarkButton />
@@ -31,7 +32,7 @@ const Brand = ({ item }) => (
         <FontSize16>{numberWithCommas(item.follower)}</FontSize16>
       </NumberContainer>
     </ProductContainer>
-  </div>
+  </ListContainer>
 );
 
 export default Brand;

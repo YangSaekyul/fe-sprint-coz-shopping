@@ -3,18 +3,12 @@ import bookmarkOn from "./bookmarkOn.png";
 import { useState } from "react";
 
 import styled, { keyframes } from "styled-components";
-import { css } from "styled-components";
 
 const StyledButton = styled.img`
   position: absolute;
   bottom: 20px;
   right: 15px;
   width: 30px;
-  ${({ inline }) =>
-    inline &&
-    css`
-      position: static;
-    `}
 `;
 
 const fadeIn = keyframes`
@@ -45,7 +39,8 @@ function BookmarkButton({ inline = false }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isToastShown, setToastShown] = useState(false);
 
-  const toggleBookmark = () => {
+  const toggleBookmark = (event) => {
+    event.stopPropagation();
     setIsBookmarked(!isBookmarked);
     if (!isBookmarked) {
       setToastShown(true);

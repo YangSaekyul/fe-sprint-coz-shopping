@@ -1,27 +1,54 @@
 import BookmarkButton from "../Buttons/BookmarkButton";
 import Styled from "styled-components";
+import {
+  ImageContainer,
+  FontSize16Weight800,
+  NumberContainer,
+  StyledImage,
+  FontSize16,
+  ListContainer,
+} from "./ProductsStyles";
+import Modal from "../ProductsPage/Modal";
 
-const ImageContainer = Styled.div`
-  position: relative;
-  display: inline-block;
+import { useState } from "react";
+
+const InfoContainer = Styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 287px;
 `;
 
-const StyledImage = Styled.img`
-  width: 200px;
-  height: 200px;
-  
+const ProductDiscountPercentage = Styled.div`
+  font-size: 16px;
+  font-weight: 800;
+  color: #452CDD;
 `;
 
-const Products = ({ item }) => (
-  <div>
-    <ImageContainer>
-      <StyledImage src={item.image_url} alt={item.title} />
-      <BookmarkButton />
-    </ImageContainer>
-    <h2>{item.title}</h2>
-    <p>{item.price}</p>
-    <p>{item.discountPercentage}</p>
-  </div>
-);
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+const Products = ({ item }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  return (
+    <ListContainer onClick={() => setShowModal(true)}>
+      <ImageContainer>
+        <StyledImage src={item.image_url} alt={item.title} />
+        <BookmarkButton />
+      </ImageContainer>
+      <InfoContainer>
+        <FontSize16Weight800>{item.title}</FontSize16Weight800>
+        <NumberContainer>
+          <ProductDiscountPercentage>
+            {item.discountPercentage}%
+          </ProductDiscountPercentage>
+          <FontSize16>{numberWithCommas(item.price)}원</FontSize16>
+        </NumberContainer>
+      </InfoContainer>
+      {showModal && <Modal item={item} close={() => setShowModal(false)} />}
+    </ListContainer>
+  );
+};
 
 export default Products;

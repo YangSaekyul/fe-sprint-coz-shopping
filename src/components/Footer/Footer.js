@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
-const StyledFooter = styled.footer`
+const FooterContainer = styled.footer`
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid lightgrey;
+  background-color: white;
+`;
+
+const StyledFooter = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: grey;
+  margin: 10px 0;
 `;
 
-// div 포인터 커서 적용 / 글씨 크기 0.8rem / margin-top 20px / 글씨 색 grey
-// 호버 적용 (하이퍼링크같은 형태)
 const StyledDiv = styled.div`
   cursor: pointer;
   font-size: 0.8rem;
@@ -22,10 +29,12 @@ const StyledDiv = styled.div`
 
 function Footer() {
   return (
-    <StyledFooter>
-      <StyledDiv>개인정보 처리방침 | 이용 약관</StyledDiv>
-      <StyledDiv>All rights reserved @ Codestates</StyledDiv>
-    </StyledFooter>
+    <FooterContainer>
+      <StyledFooter>
+        <StyledDiv>개인정보 처리방침 | 이용 약관</StyledDiv>
+        <StyledDiv>All rights reserved @ Codestates</StyledDiv>
+      </StyledFooter>
+    </FooterContainer>
   );
 }
 

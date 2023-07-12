@@ -18,6 +18,7 @@ const FilterItem = styled.div`
 
 const StyledSpan = styled.span`
   cursor: pointer;
+  border-bottom: 2px solid transparent;
 
   &:hover,
   &:active,
@@ -36,28 +37,42 @@ const StyledImage = styled.img`
   object-fit: cover; // 이미지가 잘리지 않고 꽉 차게
 `;
 
-function Filter() {
+function Filter({ setFilterType, filterType }) {
+  const handleFilter = (type) => {
+    setFilterType(type);
+  };
+
   return (
     <FilterContainer>
-      <FilterItem>
+      <FilterItem onClick={() => handleFilter("All")}>
         <StyledImage src={all} alt="전체 필터" />
-        <StyledSpan>전체</StyledSpan>
+        <StyledSpan className={filterType === "All" ? "focus" : ""}>
+          전체
+        </StyledSpan>
       </FilterItem>
-      <FilterItem>
+      <FilterItem onClick={() => handleFilter("Product")}>
         <StyledImage src={product} alt="상품 필터" />
-        <StyledSpan>상품</StyledSpan>
+        <StyledSpan className={filterType === "Product" ? "focus" : ""}>
+          상품
+        </StyledSpan>
       </FilterItem>
-      <FilterItem>
+      <FilterItem onClick={() => handleFilter("Category")}>
         <StyledImage src={category} alt="카테고리 필터" />
-        <StyledSpan>카테고리</StyledSpan>
+        <StyledSpan className={filterType === "Category" ? "focus" : ""}>
+          카테고리
+        </StyledSpan>
       </FilterItem>
-      <FilterItem>
+      <FilterItem onClick={() => handleFilter("Exhibition")}>
         <StyledImage src={exhibition} alt="기획전 필터" />
-        <StyledSpan>기획전</StyledSpan>
+        <StyledSpan className={filterType === "Exhibition" ? "focus" : ""}>
+          기획전
+        </StyledSpan>
       </FilterItem>
-      <FilterItem>
+      <FilterItem onClick={() => handleFilter("Brand")}>
         <StyledImage src={brand} alt="브랜드 필터" />
-        <StyledSpan>브랜드</StyledSpan>
+        <StyledSpan className={filterType === "Brand" ? "focus" : ""}>
+          브랜드
+        </StyledSpan>
       </FilterItem>
     </FilterContainer>
   );

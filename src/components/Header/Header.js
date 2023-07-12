@@ -4,9 +4,13 @@ import Nav from "./Nav";
 
 const StyledHeader = styled.header`
   position: sticky;
+  top: 0;
+  width: 100%;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
   padding: 1px 0;
   margin-bottom: 20px;
+  background-color: white;
+  z-index: 9998;
 `;
 
 const HeaderBar = styled.div`

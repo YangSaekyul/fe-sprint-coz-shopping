@@ -4,6 +4,8 @@ import bookmark from "./bookmark.png";
 
 import { CustomLink } from "./StyledLink";
 
+import { useRef, useEffect } from "react";
+
 const fadeIn = keyframes`
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0px); }
@@ -57,27 +59,40 @@ const StyledImg = styled.img`
   margin-right: 5px;
 `;
 
-function DropdownMenu({ open }) {
+function DropdownMenu({ open, onClose }) {
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+
   return (
-    <>
-      <StyledDropdownMenu open={open}>
-        <StyledUl>
-          <StyledLi>양새결님, 안녕하세요!</StyledLi>
-          <StyledLi>
-            <CustomLink to="/product">
-              <StyledImg src={gift} alt="상품리스트 페이지 아이콘"></StyledImg>
-              상품리스트 페이지
-            </CustomLink>
-          </StyledLi>
-          <StyledLi>
-            <CustomLink to="/bookmark">
-              <StyledImg src={bookmark} alt="북마크 페이지 아이콘"></StyledImg>
-              북마크 페이지
-            </CustomLink>
-          </StyledLi>
-        </StyledUl>
-      </StyledDropdownMenu>
-    </>
+    <StyledDropdownMenu open={open} ref={dropdownRef}>
+      <StyledUl>
+        <StyledLi>양새결님, 안녕하세요!</StyledLi>
+        <StyledLi>
+          <CustomLink to="/product">
+            <StyledImg src={gift} alt="상품리스트 페이지 아이콘"></StyledImg>
+            상품리스트 페이지
+          </CustomLink>
+        </StyledLi>
+        <StyledLi>
+          <CustomLink to="/bookmark">
+            <StyledImg src={bookmark} alt="북마크 페이지 아이콘"></StyledImg>
+            북마크 페이지
+          </CustomLink>
+        </StyledLi>
+      </StyledUl>
+    </StyledDropdownMenu>
   );
 }
 

@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Logo from "./Logo";
 import Nav from "./Nav";
 
+import { CustomLink } from "./StyledLink";
+
 const StyledHeader = styled.header`
   position: sticky;
   top: 0;
@@ -32,10 +34,12 @@ const Header = () => {
   return (
     <StyledHeader>
       <HeaderBar>
-        <Left>
-          <Logo />
-          <h1>COZ Shopping</h1>
-        </Left>
+        <CustomLink to="/">
+          <Left>
+            <Logo />
+            <h1>COZ Shopping</h1>
+          </Left>
+        </CustomLink>
         <Nav />
       </HeaderBar>
     </StyledHeader>

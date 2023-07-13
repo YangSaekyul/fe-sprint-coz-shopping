@@ -1,4 +1,4 @@
-import BookmarkButton from "../../assets/BookmarkButton";
+import BookmarkButton from "../../assets/Buttons/BookmarkButton";
 import Styled from "styled-components";
 import {
   FontSize16,

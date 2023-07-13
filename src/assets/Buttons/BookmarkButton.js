@@ -27,15 +27,29 @@ const fadeOut = keyframes`
 `;
 
 const StyledToast = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 30px;
   right: 15px;
-  background: #333;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
+  background: #fff;
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 10px;
   animation: ${fadeIn} 0.5s, ${fadeOut} 0.5s 2s;
   animation-fill-mode: forwards;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  display: flex;
+  z-index: 10000;
+  cursor: default;
+`;
+
+const ToastImage = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+`;
+
+const ToastText = styled.span`
+  font-size: 20px;
 `;
 
 function BookmarkButton({ id, inline = false }) {
@@ -74,7 +88,15 @@ function BookmarkButton({ id, inline = false }) {
         alt="북마크 버튼"
         inline={inline}
       />
-      {toast.isShown && <StyledToast>{toast.message}</StyledToast>}
+      {toast.isShown && (
+        <StyledToast>
+          <ToastImage
+            src={isBookmarked ? bookmarkOn : bookmarkOff}
+            alt="북마크 아이콘"
+          />
+          <ToastText>{toast.message}</ToastText>
+        </StyledToast>
+      )}
     </>
   );
 }

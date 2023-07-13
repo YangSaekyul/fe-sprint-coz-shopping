@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import ProductComponent from "./ProductsPage";
+import ProductComponent from "./ProductsListPage";
 
 const ListTitle = styled.h1`
   margin: 40px;

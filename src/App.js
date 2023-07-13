@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import MainPage from "./pages/MainPage";
-import ProductPage from "./pages/ProductsPage";
+import HomePage from "./pages/HomePage";
+import ProductPage from "./pages/ProductsListPage";
 import BookmarkPage from "./pages/BookmarkPage";
 
 import Header from "./components/Header/Header";
@@ -13,7 +13,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/bookmark" element={<BookmarkPage />} />
         </Routes>

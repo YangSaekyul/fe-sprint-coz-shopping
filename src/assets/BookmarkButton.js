@@ -5,7 +5,7 @@ import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 
 const StyledButton = styled.img`
-  position: absolute;
+  position: ${(props) => (props.inline ? "none" : "absolute")};
   bottom: 20px;
   right: 15px;
   width: 30px;

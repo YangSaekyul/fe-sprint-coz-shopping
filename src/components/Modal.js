@@ -45,11 +45,16 @@ const TitleContainer = Styled.div`
   left: 20px;
   display: flex;
   align-items: center;
+  flex-direction: row;
 `;
 
-const Title = Styled.h1`  
+const Title = Styled.div`  
+  display: flex;
   color: white;
   margin-left: 20px;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
 `;
 
 const Modal = ({ item, close }) => {

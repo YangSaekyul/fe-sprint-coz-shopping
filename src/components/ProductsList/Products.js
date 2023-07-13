@@ -35,7 +35,7 @@ const Products = ({ item }) => {
     <ListContainer onClick={() => setShowModal(true)}>
       <ImageContainer>
         <StyledImage src={item.image_url} alt={item.title} />
-        <BookmarkButton />
+        <BookmarkButton id={item.id} />
       </ImageContainer>
       <InfoContainer>
         <FontSize16Weight800>{item.title}</FontSize16Weight800>

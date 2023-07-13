@@ -22,7 +22,7 @@ const Category = ({ item }) => {
     <ListContainer onClick={() => setShowModal(true)}>
       <ImageContainer>
         <StyledImage src={item.image_url} alt={item.title} />
-        <BookmarkButton />
+        <BookmarkButton id={item.id} />
       </ImageContainer>
       <ProductContainer>
         <FontSize16Weight800># {item.title}</FontSize16Weight800>

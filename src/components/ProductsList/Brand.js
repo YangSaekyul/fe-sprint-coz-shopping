@@ -29,7 +29,7 @@ const Brand = ({ item }) => {
     <ListContainer onClick={() => setShowModal(true)}>
       <ImageContainer>
         <StyledImage src={item.brand_image_url} alt={item.title} />
-        <BookmarkButton />
+        <BookmarkButton id={item.id} />
       </ImageContainer>
       <ProductContainer>
         <FontSize16Weight800>{item.brand_name}</FontSize16Weight800>

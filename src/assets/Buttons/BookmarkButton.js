@@ -1,8 +1,11 @@
 import bookmarkOff from "../Images/bookmarkOff.png";
 import bookmarkOn from "../Images/bookmarkOn.png";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import styled, { keyframes } from "styled-components";
+
+import { useDispatch, useSelector } from "react-redux";
+import { toggleBookmark, removeBookmark } from "../../features/bookmark";
 
 const StyledButton = styled.img`
   position: ${(props) => (props.inline ? "none" : "absolute")};
@@ -35,34 +38,43 @@ const StyledToast = styled.div`
   animation-fill-mode: forwards;
 `;
 
-function BookmarkButton({ inline = false }) {
-  const [isBookmarked, setIsBookmarked] = useState(false);
-  const [isToastShown, setToastShown] = useState(false);
-  const [toastMessage, setToastMessage] = useState("");
+function BookmarkButton({ id, inline = false }) {
+  const dispatch = useDispatch();
+  const isBookmarked = useSelector((state) => state.bookmark[id]);
 
-  const toggleBookmark = (event) => {
-    event.stopPropagation();
-    setIsBookmarked(!isBookmarked);
+  const [toast, setToast] = useState({
+    isShown: false,
+    message: "",
+  });
+
+  const handleBookmark = (e) => {
+    e.stopPropagation();
+    let message = "";
     if (!isBookmarked) {
-      setToastMessage("상품이 북마크에 추가되었습니다.");
-      setToastShown(true);
-      setTimeout(() => setToastShown(false), 2500);
+      dispatch(toggleBookmark(id));
+      message = "상품이 북마크에 추가되었습니다.";
     } else {
-      setToastMessage("상품이 북마크에서 제거되었습니다.");
-      setToastShown(true);
-      setTimeout(() => setToastShown(false), 2500);
+      dispatch(removeBookmark(id));
+      message = "상품이 북마크에서 제거되었습니다.";
     }
+
+    setToast({
+      isShown: true,
+      message,
+    });
+
+    setTimeout(() => setToast({ isShown: false, message: "" }), 2500);
   };
 
   return (
     <>
       <StyledButton
         src={isBookmarked ? bookmarkOn : bookmarkOff}
-        onClick={toggleBookmark}
+        onClick={handleBookmark}
         alt="북마크 버튼"
         inline={inline}
       />
-      {isToastShown && <StyledToast>{toastMessage}</StyledToast>}
+      {toast.isShown && <StyledToast>{toast.message}</StyledToast>}
     </>
   );
 }

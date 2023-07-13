@@ -10,6 +10,8 @@ import Styled from "styled-components";
 
 import Loading from "../components/Loading";
 
+import { useSelector } from "react-redux";
+
 const GridContainer = Styled.main`
   display: flex;
   flex-wrap: wrap;
@@ -20,6 +22,8 @@ const GridContainer = Styled.main`
 const BookmarkPage = ({ showFilter = true }) => {
   const { data, loading, error } = useData();
   const [filterType, setFilterType] = useState("All");
+
+  const bookmarkIds = useSelector((state) => state.bookmark);
 
   if (loading) {
     return <Loading />;
@@ -33,7 +37,7 @@ const BookmarkPage = ({ showFilter = true }) => {
     return <div>데이터가 존재하지 않습니다!</div>;
   }
 
-  const bookmarkedData = data.filter((item) => item.isBookmarked);
+  const bookmarkedData = data.filter((item) => bookmarkIds[item.id]);
 
   return (
     <>

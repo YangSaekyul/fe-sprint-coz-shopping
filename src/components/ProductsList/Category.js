@@ -1,12 +1,12 @@
-import BookmarkButton from "../Buttons/BookmarkButton";
+import BookmarkButton from "../../assets/BookmarkButton";
 import Styled from "styled-components";
 import {
   ImageContainer,
   FontSize16Weight800,
   StyledImage,
   ListContainer,
-} from "./ProductsStyles";
-import Modal from "../ProductsPage/Modal";
+} from "./StyledProductsList";
+import Modal from "../Modal";
 import { useState } from "react";
 
 const ProductContainer = Styled.div`

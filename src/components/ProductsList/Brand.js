@@ -1,4 +1,4 @@
-import BookmarkButton from "../Buttons/BookmarkButton";
+import BookmarkButton from "../../assets/BookmarkButton";
 import Styled from "styled-components";
 import {
   FontSize16,
@@ -7,8 +7,8 @@ import {
   StyledImage,
   NumberContainer,
   ListContainer,
-} from "./ProductsStyles";
-import Modal from "../ProductsPage/Modal";
+} from "./StyledProductsList";
+import Modal from "../Modal";
 
 import { useState } from "react";
 

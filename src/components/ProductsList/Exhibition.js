@@ -1,12 +1,12 @@
-import BookmarkButton from "../Buttons/BookmarkButton";
+import BookmarkButton from "../../assets/BookmarkButton";
 import {
   ImageContainer,
   FontSize16Weight800,
   StyledImage,
   FontSize16,
   ListContainer,
-} from "./ProductsStyles";
-import Modal from "../ProductsPage/Modal";
+} from "./StyledProductsList";
+import Modal from "../Modal";
 
 import { useState } from "react";
 

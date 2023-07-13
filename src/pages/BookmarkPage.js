@@ -1,14 +1,14 @@
-import { useData } from "../ProductsPage/useData";
+import { useData } from "../data/useData";
 import { useState } from "react";
-import Filter from "../Main/Filter/Filter";
+import Filter from "../components/Filter/Filter";
 
-import Products from "../ProductsList/Products";
-import Exhibition from "../ProductsList/Exhibition";
-import Category from "../ProductsList/Category";
-import Brand from "../ProductsList/Brand";
+import Products from "../components/ProductsList/Products";
+import Exhibition from "../components/ProductsList/Exhibition";
+import Category from "../components/ProductsList/Category";
+import Brand from "../components/ProductsList/Brand";
 import Styled from "styled-components";
 
-import Loading from "../ProductsPage/Loading";
+import Loading from "../components/Loading";
 
 const GridContainer = Styled.main`
   display: flex;

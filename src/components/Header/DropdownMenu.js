@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
-import gift from "./gift.png";
-import bookmark from "./bookmark.png";
+import gift from "../../assets/Images/gift.png";
+import bookmark from "../../assets/Images/bookmark.png";
 
 import { CustomLink } from "./StyledLink";
 

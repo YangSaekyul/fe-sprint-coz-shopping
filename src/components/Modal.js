@@ -1,8 +1,8 @@
 import Styled from "styled-components";
-import closeButton from "./ic_round-close.png";
+import closeButton from "../assets/Images/ic_round-close.png";
 
-import { ImageContainer } from "../ProductsList/ProductsStyles";
-import BookmarkButton from "../Buttons/BookmarkButton";
+import { ImageContainer } from "../components/ProductsList/StyledProductsList";
+import BookmarkButton from "../assets/BookmarkButton";
 
 const ModalBackground = Styled.div`
   position: fixed;

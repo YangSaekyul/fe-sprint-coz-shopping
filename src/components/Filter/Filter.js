@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import all from "./all.png";
-import product from "./product.png";
-import category from "./category.png";
-import exhibition from "./exhibition.png";
-import brand from "./brand.png";
+import all from "../../assets/Images/all.png";
+import product from "../../assets/Images/product.png";
+import category from "../../assets/Images/category.png";
+import exhibition from "../../assets/Images/exhibition.png";
+import brand from "../../assets/Images/brand.png";
 
 const FilterContainer = styled.div`
   display: flex;

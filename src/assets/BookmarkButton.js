@@ -1,5 +1,5 @@
-import bookmarkOff from "./bookmarkOff.png";
-import bookmarkOn from "./bookmarkOn.png";
+import bookmarkOff from "../../src/assets/Images/bookmarkOff.png";
+import bookmarkOn from "../../src/assets/Images/bookmarkOn.png";
 import { useState } from "react";
 
 import styled, { keyframes } from "styled-components";

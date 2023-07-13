@@ -19,7 +19,7 @@ const GridContainer = Styled.main`
   padding: 20px;
 `;
 
-const BookmarkPage = ({ showFilter = true }) => {
+const BookmarkPage = ({ numItems = Infinity, showFilter = true }) => {
   const { data, loading, error } = useData();
   const [filterType, setFilterType] = useState("All");
 
@@ -38,13 +38,14 @@ const BookmarkPage = ({ showFilter = true }) => {
   }
 
   const bookmarkedData = data.filter((item) => bookmarkIds[item.id]);
+  const limitedData = bookmarkedData.slice(0, numItems);
 
   return (
     <>
       {showFilter && <Filter setFilterType={setFilterType} />}
 
       <GridContainer>
-        {bookmarkedData.map((item) => {
+        {limitedData.map((item) => {
           if (filterType !== "All" && item.type !== filterType) {
             return null;
           }

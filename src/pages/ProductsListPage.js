@@ -17,7 +17,7 @@ const GridContainer = Styled.main`
   padding: 20px;
 `;
 
-const ProductComponent = ({ numItems = Infinity, showFilter = true }) => {
+const ProductsListPage = ({ numItems = Infinity, showFilter = true }) => {
   const { data, loading, error } = useData();
   const [filterType, setFilterType] = useState("All");
 
@@ -63,4 +63,4 @@ const ProductComponent = ({ numItems = Infinity, showFilter = true }) => {
   );
 };
 
-export default ProductComponent;
+export default ProductsListPage;

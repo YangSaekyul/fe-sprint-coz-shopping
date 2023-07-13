@@ -38,11 +38,17 @@ const StyledToast = styled.div`
 function BookmarkButton({ inline = false }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isToastShown, setToastShown] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
 
   const toggleBookmark = (event) => {
     event.stopPropagation();
     setIsBookmarked(!isBookmarked);
     if (!isBookmarked) {
+      setToastMessage("상품이 북마크에 추가되었습니다.");
+      setToastShown(true);
+      setTimeout(() => setToastShown(false), 2500);
+    } else {
+      setToastMessage("상품이 북마크에서 제거되었습니다.");
       setToastShown(true);
       setTimeout(() => setToastShown(false), 2500);
     }
@@ -56,7 +62,7 @@ function BookmarkButton({ inline = false }) {
         alt="북마크 버튼"
         inline={inline}
       />
-      {isToastShown && <StyledToast>북마크에 담겼습니다!</StyledToast>}
+      {isToastShown && <StyledToast>{toastMessage}</StyledToast>}
     </>
   );
 }

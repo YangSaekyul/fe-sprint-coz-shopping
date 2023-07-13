@@ -8,6 +8,7 @@ export const ListContainer = Styled.div`
 export const ImageContainer = Styled.div`
   position: relative;
   /* display: inline-block; */
+  margin: 0 10px;
 `;
 
 export const FontSize16Weight800 = Styled.div`

@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 const GridContainer = Styled.main`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
 `;
 

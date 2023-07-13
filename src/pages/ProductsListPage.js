@@ -13,7 +13,7 @@ import Loading from "../components/Loading";
 const GridContainer = Styled.main`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
 `;
 

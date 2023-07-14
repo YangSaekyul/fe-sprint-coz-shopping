@@ -5,7 +5,7 @@ import category from "../../assets/Images/category.png";
 import exhibition from "../../assets/Images/exhibition.png";
 import brand from "../../assets/Images/brand.png";
 
-const FilterContainer = styled.div`
+const FilterContainer = styled.section`
   display: flex;
   justify-content: center;
 `;

@@ -10,7 +10,7 @@ import Styled from "styled-components";
 
 import Loading from "../components/Loading";
 
-const GridContainer = Styled.main`
+const GridContainer = Styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -38,27 +38,28 @@ const ProductsListPage = ({ numItems = Infinity, showFilter = true }) => {
   return (
     <>
       {showFilter && <Filter setFilterType={setFilterType} />}
-
-      <GridContainer>
-        {limitedData.map((item) => {
-          if (filterType !== "All" && item.type !== filterType) {
-            return null;
-          }
-
-          switch (item.type) {
-            case "Product":
-              return <Products key={item.id} item={item} />;
-            case "Category":
-              return <Category key={item.id} item={item} />;
-            case "Exhibition":
-              return <Exhibition key={item.id} item={item} />;
-            case "Brand":
-              return <Brand key={item.id} item={item} />;
-            default:
+      <main>
+        <GridContainer>
+          {limitedData.map((item) => {
+            if (filterType !== "All" && item.type !== filterType) {
               return null;
-          }
-        })}
-      </GridContainer>
+            }
+
+            switch (item.type) {
+              case "Product":
+                return <Products key={item.id} item={item} />;
+              case "Category":
+                return <Category key={item.id} item={item} />;
+              case "Exhibition":
+                return <Exhibition key={item.id} item={item} />;
+              case "Brand":
+                return <Brand key={item.id} item={item} />;
+              default:
+                return null;
+            }
+          })}
+        </GridContainer>
+      </main>
     </>
   );
 };

@@ -16,7 +16,7 @@ const fadeOut = keyframes`
   100% { opacity: 0; transform: translateY(10px); }
 `;
 
-const StyledDropdownMenu = styled.div`
+const StyledDropdownMenu = styled.nav`
   position: absolute;
   top: 50px;
   right: 0;

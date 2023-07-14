@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleBookmark, removeBookmark } from "../../features/bookmark";
 
 const StyledButton = styled.img`
-  position: ${(props) => (props.inline ? "none" : "absolute")};
+  position: ${(props) => (props.$inline ? "none" : "absolute")};
   bottom: 20px;
   right: 15px;
   width: 30px;
@@ -86,7 +86,7 @@ function BookmarkButton({ id, inline = false }) {
         src={isBookmarked ? bookmarkOn : bookmarkOff}
         onClick={handleBookmark}
         alt="북마크 버튼"
-        inline={inline}
+        $inline={inline}
       />
       {toast.isShown && (
         <StyledToast>
